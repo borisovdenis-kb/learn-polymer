@@ -1,0 +1,58 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+
+<dom-module id="polymer-first-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <paper-input char-counter label="Last Name" value="{{user.lastName}}"></paper-input>
+    <paper-input char-counter label="First Name" value="{{user.firstName}}"></paper-input>
+    <paper-input char-counter label="Middle Name" value="{{user.middleName}}"></paper-input>
+    <h3>{{fullName}}</h3>
+  </template>
+
+  <script>
+    class PolymerFirstApp extends Polymer.Element {
+      static get is() { return 'polymer-first-app'; }
+      static get properties() {
+        return {
+          user: {
+            type: Object,
+            value: f => {
+              return {
+                firstName: "",
+                lastName: "",
+                middleName: "",
+                gender: undefined,
+                age: 0
+              }
+            }
+          },
+          fullName: {
+            type: String,
+            computed: 'computeFullName(user.lastName, user.firstName, user.middleName)'
+          }
+        };
+      }
+
+//      static get observers() {
+//        return [
+//            '_fullNameChanged(user.firstName, user.lastName, user.middleName)'
+//        ]
+//      }
+//
+//      _fullNameChanged(firstName, lastName, middleName) {
+//        console.log(`${lastName} ${firstName} ${middleName}`);
+//      }
+
+      computeFullName(lastName, firstName, middleName) {
+        return `${lastName} ${firstName} ${middleName}`
+      }
+    }
+
+    window.customElements.define(PolymerFirstApp.is, PolymerFirstApp);
+  </script>
+</dom-module>
