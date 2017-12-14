@@ -1,0 +1,45 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+
+<dom-module id="dialog-window">
+  <template>
+    <style>
+
+    </style>
+
+    <paper-dialog id="dialog">
+      <h2>Отправка формы</h2>
+      <div id="user-info">
+        <h3>ФИО: {{fullName}}</h3>
+        <h3>Возраст: {{user.age}}</h3>
+        <h3>Пол: {{user.gender}}</h3>
+      </div>
+      <div class="buttons">
+        <paper-button dialog-dismiss="">Cancel</paper-button>
+        <paper-button dialog-confirm="" autofocus="">Accept</paper-button>
+      </div>
+    </paper-dialog>
+  </template>
+  
+  <script>
+    class DialogWindow extends Polymer.Element {
+      static get is() { return 'dialog-window'; }
+      static get properties() {
+        return {
+          user: {
+            type: Object
+          },
+          fullName: {
+            type: String
+          }
+        };
+      }
+
+      open() {
+        this.$.dialog.open();
+      }
+    }
+
+    window.customElements.define(DialogWindow.is, DialogWindow);
+  </script>
+</dom-module>
