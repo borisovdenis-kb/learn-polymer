@@ -74,7 +74,7 @@
           </paper-listbox>
         </div>
 
-        <my-button on-tap="open"></my-button>
+        <my-button on-tap="open" is-active="{{buttonIsActive}}"></my-button>
         <dialog-window id="modal" user="{{user}}" full-name="{{fullName}}">
         </dialog-window>
       </div>
@@ -102,8 +102,28 @@
           fullName: {
             type: String,
             computed: 'computeFullName(user.lastName, user.firstName, user.middleName)'
+          },
+          buttonIsActive: {
+            type: Boolean,
+            value: true
           }
         };
+      }
+
+      static get observers() {
+        return [
+          'userChanged(user.*)'
+        ]
+      }
+
+      userChanged(changedRecord) {
+        let emptyValues = [undefined, 0, "", "None"];
+        let flag = false;
+        for (let key in this.user) {
+          flag = flag || (emptyValues.indexOf(this.user[key]) != -1);
+        }
+        console.log("-->" + flag);
+        this.buttonIsActive = flag;
       }
 
       computeFullName(lastName, firstName, middleName) {
@@ -113,6 +133,7 @@
       open() {
         this.$.modal.open()
       }
+
     }
 
     window.customElements.define(PolymerFirstApp.is, PolymerFirstApp);

@@ -7,7 +7,7 @@
 
     </style>
 
-    <paper-button raised>dialog with actions</paper-button>
+    <paper-button raised disabled="{{isActive}}">Отправить заявку</paper-button>
   </template>
 
   <script>
@@ -15,6 +15,9 @@
       static get is() { return 'my-button'; }
       static get properties() {
         return {
+          isActive: {
+            type: Boolean
+          }
         };
       }
     }
