@@ -52,6 +52,9 @@
         padding: 10px;
         padding-left: 15px;
       }
+      paper-toggle-button {
+        cursor: pointer;
+      }
       .indent {
         margin-bottom: 15px;
       }
@@ -106,7 +109,6 @@
 
         <div id="user-gender" class="indent">
           <span>Пол:</span>
-          <span>{{atLeastOneServiceIsChecked}}</span>
           <paper-listbox id="form-listbox" attr-for-selected="item-name" selected="{{userClaim.gender}}" fallback-selection="None" required>
             <paper-item item-name="Mужской">Мужской</paper-item>
             <paper-item item-name="Женский">Женский</paper-item>
@@ -172,7 +174,12 @@
           },
           buttonIsDisabled: {
             type: Boolean,
-            value: true
+            value: true,
+            computed: 'computeButtonIsDisabled(allFieldsAreFilled, atLeastOneServiceIsChecked)'
+          },
+          allFieldsAreFilled: {
+            type: Boolean,
+            value: false
           },
           atLeastOneServiceIsChecked: {
             type: Boolean,
@@ -190,13 +197,13 @@
 
       userChanged(changedRecord) {
         let emptyValues = [undefined, 0, "", "None"];
-        let flag = false;
-        for (let key in this.userClaim) {
-          flag = flag || (emptyValues.indexOf(this.userClaim[key]) != -1);
-        }
-        console.log(flag);
-        flag = flag && this.atLeastOneServiceIsChecked;
-        this.buttonIsDisabled = flag;
+        let flag = true;
+        flag = flag && this.userClaim.firstName != "";
+        flag = flag && this.userClaim.lastName != "";
+        flag = flag && this.userClaim.middleName != "";
+        flag = flag && this.userClaim.age > 0;
+        flag = flag && this.userClaim.gender != "None";
+        this.allFieldsAreFilled = flag;
       }
 
       serviceChanged(changedRecord) {
@@ -209,6 +216,10 @@
 
       computeFullName(lastName, firstName, middleName) {
         return `${lastName} ${firstName} ${middleName}`
+      }
+
+      computeButtonIsDisabled(allFieldsAreFilled, atLeastOneServiceIsChecked) {
+        return !(allFieldsAreFilled && atLeastOneServiceIsChecked);
       }
 
       open() {

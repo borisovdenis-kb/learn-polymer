@@ -2,91 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c787a88-9846-4851-a0d3-5c0fabb70bd8" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/borisov.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/iron-icon/.bower.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/iron-icon/.github/ISSUE_TEMPLATE.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/iron-icon/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/iron-icon/.travis.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/iron-icon/CONTRIBUTING.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/iron-icon/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/iron-icon/bower.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/iron-icon/demo/async.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/iron-icon/demo/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/iron-icon/demo/location.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/iron-icon/hero.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/iron-icon/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/iron-icon/iron-icon.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/iron-icon/test/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/iron-icon/test/iron-icon.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-checkbox/.bower.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-checkbox/.eslintrc.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-checkbox/.github/ISSUE_TEMPLATE.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-checkbox/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-checkbox/.travis.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-checkbox/CONTRIBUTING.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-checkbox/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-checkbox/bower.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-checkbox/demo/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-checkbox/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-checkbox/paper-checkbox.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-checkbox/test/.eslintrc.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-checkbox/test/basic.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-checkbox/test/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-icon-button/.bower.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-icon-button/.github/ISSUE_TEMPLATE.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-icon-button/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-icon-button/.travis.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-icon-button/CONTRIBUTING.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-icon-button/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-icon-button/bower.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-icon-button/demo/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-icon-button/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-icon-button/paper-icon-button.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-icon-button/test/a11y.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-icon-button/test/basic.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-icon-button/test/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-toggle-button/.bower.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-toggle-button/.github/ISSUE_TEMPLATE.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-toggle-button/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-toggle-button/.travis.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-toggle-button/CONTRIBUTING.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-toggle-button/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-toggle-button/bower.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-toggle-button/demo/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-toggle-button/hero.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-toggle-button/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-toggle-button/paper-toggle-button.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-toggle-button/test/basic.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bower_components/paper-toggle-button/test/index.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change beforePath="$PROJECT_DIR$/bower_components/async/README.md" afterPath="$PROJECT_DIR$/bower_components/async/README.md" />
-      <change beforePath="$PROJECT_DIR$/bower_components/chai/chai.js" afterPath="$PROJECT_DIR$/bower_components/chai/chai.js" />
-      <change beforePath="$PROJECT_DIR$/bower_components/iron-behaviors/iron-control-state.html" afterPath="$PROJECT_DIR$/bower_components/iron-behaviors/iron-control-state.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/iron-input/iron-input.html" afterPath="$PROJECT_DIR$/bower_components/iron-input/iron-input.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/iron-menu-behavior/iron-menu-behavior.html" afterPath="$PROJECT_DIR$/bower_components/iron-menu-behavior/iron-menu-behavior.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/iron-overlay-behavior/iron-overlay-behavior.html" afterPath="$PROJECT_DIR$/bower_components/iron-overlay-behavior/iron-overlay-behavior.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/iron-overlay-behavior/iron-scroll-manager.html" afterPath="$PROJECT_DIR$/bower_components/iron-overlay-behavior/iron-scroll-manager.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/mocha/mocha.js" afterPath="$PROJECT_DIR$/bower_components/mocha/mocha.js" />
-      <change beforePath="$PROJECT_DIR$/bower_components/paper-dialog-behavior/paper-dialog-behavior.html" afterPath="$PROJECT_DIR$/bower_components/paper-dialog-behavior/paper-dialog-behavior.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/paper-input/demo/ssn-input.html" afterPath="$PROJECT_DIR$/bower_components/paper-input/demo/ssn-input.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/paper-input/paper-input-behavior.html" afterPath="$PROJECT_DIR$/bower_components/paper-input/paper-input-behavior.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/paper-slider/paper-slider.html" afterPath="$PROJECT_DIR$/bower_components/paper-slider/paper-slider.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/polymer/lib/elements/array-selector.html" afterPath="$PROJECT_DIR$/bower_components/polymer/lib/elements/array-selector.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/polymer/lib/elements/dom-if.html" afterPath="$PROJECT_DIR$/bower_components/polymer/lib/elements/dom-if.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/polymer/lib/legacy/class.html" afterPath="$PROJECT_DIR$/bower_components/polymer/lib/legacy/class.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/polymer/lib/legacy/legacy-element-mixin.html" afterPath="$PROJECT_DIR$/bower_components/polymer/lib/legacy/legacy-element-mixin.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/polymer/lib/legacy/mutable-data-behavior.html" afterPath="$PROJECT_DIR$/bower_components/polymer/lib/legacy/mutable-data-behavior.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/polymer/lib/mixins/element-mixin.html" afterPath="$PROJECT_DIR$/bower_components/polymer/lib/mixins/element-mixin.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/polymer/lib/mixins/mutable-data.html" afterPath="$PROJECT_DIR$/bower_components/polymer/lib/mixins/mutable-data.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/polymer/lib/mixins/property-accessors.html" afterPath="$PROJECT_DIR$/bower_components/polymer/lib/mixins/property-accessors.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/polymer/lib/mixins/property-effects.html" afterPath="$PROJECT_DIR$/bower_components/polymer/lib/mixins/property-effects.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/polymer/lib/utils/boot.html" afterPath="$PROJECT_DIR$/bower_components/polymer/lib/utils/boot.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/polymer/lib/utils/import-href.html" afterPath="$PROJECT_DIR$/bower_components/polymer/lib/utils/import-href.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/polymer/lib/utils/templatize.html" afterPath="$PROJECT_DIR$/bower_components/polymer/lib/utils/templatize.html" />
-      <change beforePath="$PROJECT_DIR$/bower_components/sinonjs/sinon.js" afterPath="$PROJECT_DIR$/bower_components/sinonjs/sinon.js" />
-      <change beforePath="$PROJECT_DIR$/src/polymer-first-app/dialog-window.html" afterPath="$PROJECT_DIR$/src/polymer-first-app/dialog-window.html" />
-      <change beforePath="$PROJECT_DIR$/src/polymer-first-app/my-button.html" afterPath="$PROJECT_DIR$/src/polymer-first-app/my-button.html" />
       <change beforePath="$PROJECT_DIR$/src/polymer-first-app/polymer-first-app.html" afterPath="$PROJECT_DIR$/src/polymer-first-app/polymer-first-app.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -104,11 +20,9 @@
       <file leaf-file-name="polymer-first-app.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/polymer-first-app/polymer-first-app.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="196" column="26" lean-forward="false" selection-start-line="196" selection-start-column="26" selection-end-line="196" selection-end-column="26" />
-              <folding>
-                <element signature="n#style#0;n#template#0;n#dom-module#0;n#!!top" expanded="false" />
-              </folding>
+            <state relative-caret-position="-2058">
+              <caret line="110" column="27" lean-forward="false" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -314,7 +228,7 @@
       <updated>1513187504215</updated>
       <workItem from="1513187506336" duration="5203000" />
       <workItem from="1513236297896" duration="26828000" />
-      <workItem from="1513322221279" duration="21056000" />
+      <workItem from="1513322221279" duration="22843000" />
     </task>
     <task id="LOCAL-00001" summary="Сделал форму, сделал модальное окно.">
       <created>1513259604075</created>
@@ -330,11 +244,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513267805591</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Добавил возможность &quot;подписки&quot; на рассылку по email. Пытаюсь сделарть исправно работающей дизейблинг/раздизейблинг кнопки.">
+      <created>1513347716842</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1513347716842</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53087000" />
+    <option name="totallyTimeSpent" value="54874000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -344,7 +265,7 @@
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.8980263" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38980263" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.85855263" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -367,7 +288,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Сделал форму, сделал модальное окно." />
     <MESSAGE value="Сделал дизейбл кнопки, и раздизейбилнг при заполнении всей формы полностью" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал дизейбл кнопки, и раздизейбилнг при заполнении всей формы полностью" />
+    <MESSAGE value="Добавил возможность &quot;подписки&quot; на рассылку по email. Пытаюсь сделарть исправно работающей дизейблинг/раздизейблинг кнопки." />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил возможность &quot;подписки&quot; на рассылку по email. Пытаюсь сделарть исправно работающей дизейблинг/раздизейблинг кнопки." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -380,9 +302,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#template#0;n#dom-module#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -398,9 +318,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#template#0;n#dom-module#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -439,11 +357,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/polymer-first-app/polymer-first-app.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="196" column="26" lean-forward="false" selection-start-line="196" selection-start-column="26" selection-end-line="196" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#template#0;n#dom-module#0;n#!!top" expanded="false" />
-          </folding>
+        <state relative-caret-position="-2058">
+          <caret line="110" column="27" lean-forward="false" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
