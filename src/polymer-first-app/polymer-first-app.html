@@ -3,6 +3,10 @@
 <link rel="import" href="../../bower_components/paper-slider/paper-slider.html">
 <link rel="import" href="../../bower_components/paper-item/paper-item.html">
 <link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../../bower_components/paper-toggle-button/paper-toggle-button.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="/src/polymer-first-app/my-button.html">
 <link rel="import" href="/src/polymer-first-app/dialog-window.html">
 
@@ -36,7 +40,7 @@
         --paper-listbox-background-color: rgba(236, 236, 223, 0.62);
       }
       #slider-wrapper {
-        background-color: rgba(236, 236, 223, 0.62);;
+        background-color: rgba(236, 236, 223, 0.62);
       }
       paper-slider {
         width: 100%;
@@ -44,38 +48,91 @@
       paper-item {
         cursor: pointer;
       }
+      paper-checkbox {
+        padding: 10px;
+        padding-left: 15px;
+      }
       .indent {
         margin-bottom: 15px;
       }
+      #check-boxes {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(236, 236, 223, 0.62);
+      }
+      #mailing {
+        display: flex;
+        flex-direction: row;
+        padding-left: 10px;
+        background-color: rgba(236, 236, 223, 0.62);
+      }
+      #user-email-input {
+        width: 50%;
+      }
     </style>
+
     <div id="form-wrapper">
       <div id="user-data-form">
         <div id="username" class="indent">
           <span>ФИО:</span>
           <div id="username-inputs">
-            <paper-input label="Фамилия" value="{{user.lastName}}"></paper-input>
-            <paper-input label="Имя" value="{{user.firstName}}"></paper-input>
-            <paper-input label="Отчество" value="{{user.middleName}}"></paper-input>
+            <paper-input
+                    class="form-input"
+                    label="Фамилия"
+                    value="{{userClaim.lastName}}"
+                    required>
+            </paper-input>
+            <paper-input
+                    class="form-input"
+                    label="Имя"
+                    value="{{userClaim.firstName}}"
+                    required>
+            </paper-input>
+            <paper-input
+                    class="form-input"
+                    label="Отчество"
+                    value="{{userClaim.middleName}}"
+                    required>
+            </paper-input>
           </div>
         </div>
 
         <div id="user-age" class="indent">
           <span>Возраст:</span>
           <div id="slider-wrapper">
-            <paper-slider pin value="{{user.age}}" max="100"></paper-slider>
+            <paper-slider id="form-slider" pin value="{{userClaim.age}}" max="100" required></paper-slider>
           </div>
         </div>
 
         <div id="user-gender" class="indent">
           <span>Пол:</span>
-          <paper-listbox attr-for-selected="item-name" selected="{{user.gender}}" fallback-selection="None">
+          <span>{{atLeastOneServiceIsChecked}}</span>
+          <paper-listbox id="form-listbox" attr-for-selected="item-name" selected="{{userClaim.gender}}" fallback-selection="None" required>
             <paper-item item-name="Mужской">Мужской</paper-item>
             <paper-item item-name="Женский">Женский</paper-item>
           </paper-listbox>
         </div>
 
-        <my-button on-tap="open" is-active="{{buttonIsActive}}"></my-button>
-        <dialog-window id="modal" user="{{user}}" full-name="{{fullName}}">
+        <span>Выберите услуги:</span>
+        <div id="check-boxes" class="indent">
+          <template is="dom-repeat" items="{{userClaim.services}}">
+            <paper-checkbox checked="{{item.checked}}">{{item.name}}</paper-checkbox>
+          </template>
+        </div>
+
+        <span>Подпишитесь на рассылку, что знать обо всех действущих акциях:</span>
+        <div id="mailing" class="indent">
+          <paper-toggle-button checked="{{userClaim.mailingSubscription.checked}}"></paper-toggle-button>
+          <paper-input
+                  id="user-email-input"
+                  label="Email"
+                  value="{{userClaim.mailingSubscription.userEmail}}"
+                  disabled="{{!userClaim.mailingSubscription.checked}}">
+          </paper-input>
+        </div>
+
+        <my-button on-tap="open" is-disabled="{{buttonIsDisabled}}"></my-button>
+        <dialog-window id="modal" user-claim="{{userClaim}}" full-name="{{fullName}}">
         </dialog-window>
       </div>
     </div>
@@ -87,7 +144,7 @@
       static get is() { return 'polymer-first-app'; }
       static get properties() {
         return {
-          user: {
+          userClaim: {
             type: Object,
             value: f => {
               return {
@@ -95,35 +152,59 @@
                 lastName: "",
                 middleName: "",
                 gender: undefined,
-                age: 0
+                age: 0,
+                services: [
+                  {checked: false, name: "Безлимитный интернет"},
+                  {checked: false, name: "Кабельное телевидение"},
+                  {checked: false, name: "Смарт TV"},
+                  {checked: false, name: "Домашний телефон"}
+                ],
+                mailingSubscription: {
+                  checked: false,
+                  userEmail: ""
+                }
               }
             }
           },
           fullName: {
             type: String,
-            computed: 'computeFullName(user.lastName, user.firstName, user.middleName)'
+            computed: 'computeFullName(userClaim.lastName, userClaim.firstName, userClaim.middleName)'
           },
-          buttonIsActive: {
+          buttonIsDisabled: {
             type: Boolean,
             value: true
+          },
+          atLeastOneServiceIsChecked: {
+            type: Boolean,
+            value: false
           }
         };
       }
 
       static get observers() {
         return [
-          'userChanged(user.*)'
+          'userChanged(userClaim.*)',
+          'serviceChanged(userClaim.services.*)'
         ]
       }
 
       userChanged(changedRecord) {
         let emptyValues = [undefined, 0, "", "None"];
         let flag = false;
-        for (let key in this.user) {
-          flag = flag || (emptyValues.indexOf(this.user[key]) != -1);
+        for (let key in this.userClaim) {
+          flag = flag || (emptyValues.indexOf(this.userClaim[key]) != -1);
         }
-        console.log("-->" + flag);
-        this.buttonIsActive = flag;
+        console.log(flag);
+        flag = flag && this.atLeastOneServiceIsChecked;
+        this.buttonIsDisabled = flag;
+      }
+
+      serviceChanged(changedRecord) {
+        let flag = false;
+        this.userClaim.services.forEach(function (value) {
+          flag = flag || value.checked;
+        });
+        this.atLeastOneServiceIsChecked = flag;
       }
 
       computeFullName(lastName, firstName, middleName) {
@@ -131,6 +212,7 @@
       }
 
       open() {
+        console.log(this.userClaim);
         this.$.modal.open()
       }
 

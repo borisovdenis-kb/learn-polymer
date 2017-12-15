@@ -798,7 +798,7 @@
     function createDate() {
         function ClockDate(year, month, date, hour, minute, second, ms) {
             // Defensive and verbose to avoid potential harm in passing
-            // explicit undefined when user does not pass argument
+            // explicit undefined when userClaim does not pass argument
             switch (arguments.length) {
             case 0:
                 return new NativeDate(ClockDate.clock.now);

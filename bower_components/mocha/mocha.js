@@ -2060,7 +2060,7 @@ if (process.platform === 'win32') {
 /**
  * Color `str` with the given `type`,
  * allowing colors to be disabled,
- * as well as user-defined color
+ * as well as userClaim-defined color
  * schemes.
  *
  * @param {string} type
@@ -6698,7 +6698,7 @@ exports.lookupFiles = function lookupFiles (path, extensions, recursive) {
 };
 
 /**
- * Generate an undefined error with a message warning the user.
+ * Generate an undefined error with a message warning the userClaim.
  *
  * @return {Error}
  */
@@ -10177,7 +10177,7 @@ EventEmitter.prototype.emit = function(type) {
       if (er instanceof Error) {
         throw er; // Unhandled 'error' event
       } else {
-        // At least give some kind of context to the user
+        // At least give some kind of context to the userClaim
         var err = new Error('Uncaught, unspecified "error" event. (' + er + ')');
         err.context = er;
         throw err;
@@ -11693,7 +11693,7 @@ module.exports = Array.isArray || function (arr) {
               result = results.length ? (whitespace ? "[\n" + indentation + results.join(",\n" + indentation) + "\n" + prefix + "]" : ("[" + results.join(",") + "]")) : "[]";
             } else {
               // Recursively serialize object members. Members are selected from
-              // either a user-specified list of property names, or the object
+              // either a userClaim-specified list of property names, or the object
               // itself.
               forEach(properties || value, function (property) {
                 var element = serialize(property, value, callback, properties, whitespace, indentation, stack);
@@ -13932,7 +13932,7 @@ function readableAddChunk(stream, state, chunk, encoding, addToFront) {
 // Also, if we have no data yet, we can stand some
 // more bytes.  This is to work around cases where hwm=0,
 // such as the repl.  Also, if the push() triggered a
-// readable event, and the user called read(largeNumber) such that
+// readable event, and the userClaim called read(largeNumber) such that
 // needReadable was set, then we ought to push more, so that another
 // 'readable' event will be triggered.
 function needMoreData(state) {
@@ -14059,7 +14059,7 @@ Readable.prototype.read = function (n) {
     this._read(state.highWaterMark);
     state.sync = false;
     // If _read pushed data synchronously, then `reading` will be false,
-    // and we need to re-evaluate how much data we can return to the user.
+    // and we need to re-evaluate how much data we can return to the userClaim.
     if (!state.reading) n = howMuchToRead(nOrig, state);
   }
 
@@ -14129,7 +14129,7 @@ function emitReadable_(stream) {
   flow(stream);
 }
 
-// at this point, the user has presumably seen the 'readable' event,
+// at this point, the userClaim has presumably seen the 'readable' event,
 // and called read() to consume some data.  that may have triggered
 // in turn another _read(n) call, in which case reading = true if
 // it's in progress.
@@ -14228,7 +14228,7 @@ Readable.prototype.pipe = function (dest, pipeOpts) {
     if (state.awaitDrain && (!dest._writableState || dest._writableState.needDrain)) ondrain();
   }
 
-  // If the user pushes more data while we're writing to dest then we'll end up
+  // If the userClaim pushes more data while we're writing to dest then we'll end up
   // in ondata again. However, we only want to increase awaitDrain once because
   // dest will only emit one 'drain' event for the multiple writes.
   // => Introduce a guard on increasing awaitDrain.
@@ -14239,7 +14239,7 @@ Readable.prototype.pipe = function (dest, pipeOpts) {
     increasedAwaitDrain = false;
     var ret = dest.write(chunk);
     if (false === ret && !increasedAwaitDrain) {
-      // If the user unpiped during `dest.write()`, it is possible
+      // If the userClaim unpiped during `dest.write()`, it is possible
       // to get stuck in a permanently paused state if that write
       // also returned false.
       // => Check whether `dest` is still a piping destination.
@@ -14386,7 +14386,7 @@ function nReadingNextTick(self) {
 }
 
 // pause() and resume() are remnants of the legacy readable stream API
-// If the user uses them, then switch into old mode.
+// If the userClaim uses them, then switch into old mode.
 Readable.prototype.resume = function () {
   var state = this._readableState;
   if (!state.flowing) {
@@ -14938,7 +14938,7 @@ function WritableState(options, stream) {
     onwrite(stream, er);
   };
 
-  // the callback that the user supplies to write(chunk,encoding,cb)
+  // the callback that the userClaim supplies to write(chunk,encoding,cb)
   this.writecb = null;
 
   // the amount that is being written when _write is called.
@@ -14947,7 +14947,7 @@ function WritableState(options, stream) {
   this.bufferedRequest = null;
   this.lastBufferedRequest = null;
 
-  // number of pending user-supplied write callbacks
+  // number of pending userClaim-supplied write callbacks
   // this must be 0 before 'finish' can be emitted
   this.pendingcb = 0;
 
@@ -15044,7 +15044,7 @@ function writeAfterEnd(stream, cb) {
   processNextTick(cb, er);
 }
 
-// Checks that a user-supplied chunk is valid, especially for the particular
+// Checks that a userClaim-supplied chunk is valid, especially for the particular
 // mode the stream is in. Currently this means that `null` is never accepted
 // and undefined/non-string values are only allowed in object mode.
 function validChunk(stream, state, chunk, cb) {
@@ -16210,7 +16210,7 @@ function arrayToHash(array) {
 
 
 function formatValue(ctx, value, recurseTimes) {
-  // Provide a hook for user-specified inspect functions.
+  // Provide a hook for userClaim-specified inspect functions.
   // Check that value is an object with an inspect function on it
   if (ctx.customInspect &&
       value &&

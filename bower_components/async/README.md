@@ -1089,7 +1089,7 @@ __Example__
 
 ```js
 // Requires lodash (or underscore), express3 and dresende's orm2.
-// Part of an app, that fetches cats of the logged user.
+userInfo
 // This example uses `seq` function to avoid overnesting and error
 // handling clutter.
 app.get('/cats', function(request, response) {
@@ -1386,7 +1386,7 @@ async.auto({
         console.log('in email_link', JSON.stringify(results));
         // once the file is written let's email a link to it...
         // results.write_file contains the filename returned by write_file.
-        callback(null, {'file':results.write_file, 'email':'user@example.com'});
+        callback(null, {'file':results.write_file, 'email':userClaim});
     }]
 }, function(err, results) {
     console.log('err = ', err);

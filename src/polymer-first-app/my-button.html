@@ -7,7 +7,7 @@
 
     </style>
 
-    <paper-button raised disabled="{{isActive}}">Отправить заявку</paper-button>
+    <paper-button raised disabled="{{isDisabled}}">Отправить заявку</paper-button>
   </template>
 
   <script>
@@ -15,7 +15,7 @@
       static get is() { return 'my-button'; }
       static get properties() {
         return {
-          isActive: {
+          isDisabled: {
             type: Boolean
           }
         };

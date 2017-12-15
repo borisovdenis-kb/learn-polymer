@@ -405,9 +405,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
        *
        * - `forwardHostProp(property, value)`: Called when a property referenced
        *   in the template changed on the template's host. As this library does
-       *   not retain references to templates instanced by the user, it is the
+       *   not retain references to templates instanced by the userClaim, it is the
        *   templatize owner's responsibility to forward host property changes into
-       *   user-stamped instances.  The `instance.forwardHostProp(property, value)`
+       *   userClaim-stamped instances.  The `instance.forwardHostProp(property, value)`
        *    method on the generated class should be called to forward host
        *   properties into the template to prevent unnecessary property-changed
        *   notifications. Any properties referenced in the template that are not

@@ -13,8 +13,16 @@
       <h2>Отправка формы</h2>
       <div id="user-info">
         <p><b>ФИО</b>: {{fullName}}</p>
-        <p><b>Возраст</b>: {{user.age}}</p>
-        <p><b>Пол</b>: {{user.gender}}</p>
+        <p><b>Возраст</b>: {{userClaim.age}}</p>
+        <p><b>Пол</b>: {{userClaim.gender}}</p>
+        <p><b>Выбранные услуги:</b></p>
+        <ul>
+          <template is="dom-repeat" items="{{userClaim.services}}">
+              <template is="dom-if" if="{{item.checked}}" restamp>
+                <li>{{item.name}}</li>
+              </template>
+          </template>
+        </ul>
       </div>
       <div class="buttons">
         <paper-button dialog-dismiss>Cancel</paper-button>
@@ -28,7 +36,7 @@
       static get is() { return 'dialog-window'; }
       static get properties() {
         return {
-          user: {
+          userClaim: {
             type: Object
           },
           fullName: {

@@ -99,7 +99,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       /**
        * Set to true to allow clicks to go through overlays. 
-       * When the user clicks outside this overlay, the click may
+       * When the userClaim clicks outside this overlay, the click may
        * close the overlay below.
        */
       allowClickThrough: {
@@ -432,7 +432,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           // If the activeElement is `<body>` or inside the overlay,
           // we are allowed to restore the focus. In all the other
           // cases focus might have been moved elsewhere by another
-          // component or by an user interaction (e.g. click on a
+          // component or by an userClaim interaction (e.g. click on a
           // button outside the overlay).
           var activeElement = this._manager.deepActiveElement;
           if (activeElement === document.body ||
@@ -520,7 +520,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         var focusedNode = this._manager.deepActiveElement;
         // If the active element is not the nodeToCheck but the overlay itself,
         // it means the focus is about to go outside the overlay, hence we
-        // should prevent that (e.g. user opens the overlay and hit Shift+TAB).
+        // should prevent that (e.g. userClaim opens the overlay and hit Shift+TAB).
         shouldWrap = (focusedNode === nodeToCheck || focusedNode === this);
       }
 
@@ -660,7 +660,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       switch (this.scrollAction) {
         case 'lock':
           // NOTE: scrolling might happen if a scroll event is not cancellable, or if
-          // user pressed keys that cause scrolling (they're not prevented in order not to
+          // userClaim pressed keys that cause scrolling (they're not prevented in order not to
           // break a11y features like navigate with arrow keys).
           this.__restoreScrollPosition();
           break;
@@ -715,11 +715,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   ### Closing and canceling
 
-  An overlay may be hidden by closing or canceling. The difference between close and cancel is user
-  intent. Closing generally implies that the user acknowledged the content on the overlay. By default,
-  it will cancel whenever the user taps outside it or presses the escape key. This behavior is
+  An overlay may be hidden by closing or canceling. The difference between close and cancel is userClaim
+  intent. Closing generally implies that the userClaim acknowledged the content on the overlay. By default,
+  it will cancel whenever the userClaim taps outside it or presses the escape key. This behavior is
   configurable with the `no-cancel-on-esc-key` and the `no-cancel-on-outside-click` properties.
-  `close()` should be called explicitly by the implementer when the user interacts with a control
+  `close()` should be called explicitly by the implementer when the userClaim interacts with a control
   in the overlay element. When the dialog is canceled, the overlay fires an 'iron-overlay-canceled'
   event. Call `preventDefault` on this event to prevent the overlay from closing.
 

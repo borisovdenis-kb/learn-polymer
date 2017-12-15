@@ -1439,14 +1439,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
        * cleared when the last `_propertiesChanged` exits. This is so:
        * a. any cached array paths (e.g. 'array.3.prop') may be invalidated
        *    due to array mutations like shift/unshift/splice; this is fine
-       *    since path changes are dirty-checked at user entry points like `set`
-       * b. dirty-checking for objects only lasts one turn to allow the user
+       *    since path changes are dirty-checked at userClaim entry points like `set`
+       * b. dirty-checking for objects only lasts one turn to allow the userClaim
        *    to mutate the object in-place and re-set it with the same identity
        *    and have all sub-properties re-propagated in a subsequent turn.
        *
        * The temp cache is not necessarily sufficient to prevent invalid array
        * paths, since a splice can happen during the same turn (with pathological
-       * user code); we could introduce a "fixup" for temporarily cached array
+       * userClaim code); we could introduce a "fixup" for temporarily cached array
        * paths if needed: https://github.com/Polymer/polymer/issues/4227
        *
        * @param {string} property Name of the property
@@ -1970,8 +1970,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
        *
        * Example:
        *
-       *     this.item.user.name = 'Bob';
-       *     this.notifyPath('item.user.name');
+       *     this.item.userClaim.name = 'Bob';
+       *     this.notifyPath('item.userClaim.name');
        *
        * @param {string} path Path that should be notified.
        * @param {*=} value Value at the path (optional).

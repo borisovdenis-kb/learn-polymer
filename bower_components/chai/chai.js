@@ -4889,7 +4889,7 @@ var isDOMElement = function (object) {
 };
 
 function formatValue(ctx, value, recurseTimes) {
-  // Provide a hook for user-specified inspect functions.
+  // Provide a hook for userClaim-specified inspect functions.
   // Check that value is an object with an inspect function on it
   if (value && typeof value.inspect === 'function' &&
       // Filter out the util module, it's inspect function is special
@@ -5974,7 +5974,7 @@ Library.prototype.define = function (type, test) {
  *
  * Assert that an object is of type. Will first
  * check natives, and if that does not pass it will
- * use the user defined custom tests.
+ * use the userClaim defined custom tests.
  *
  * ```js
  * assert(lib.test('1', 'int'));
@@ -6112,7 +6112,7 @@ Library.prototype.define = function(type, test) {
  *
  * Assert that an object is of type. Will first
  * check natives, and if that does not pass it will
- * use the user defined custom tests.
+ * use the userClaim defined custom tests.
  *
  * ```js
  * assert(lib.test('1', 'int'));

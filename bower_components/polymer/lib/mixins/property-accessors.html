@@ -38,10 +38,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   /**
    * Used to save the value of a property that will be overridden with
    * an accessor. If the `model` is a prototype, the values will be saved
-   * in `__dataProto`, and it's up to the user (or downstream mixin) to
+   * in `__dataProto`, and it's up to the userClaim (or downstream mixin) to
    * decide how/when to set these values back into the accessors.
    * If `model` is already an instance (it has a `__data` property), then
-   * the value will be set as a pending property, meaning the user should
+   * the value will be set as a pending property, meaning the userClaim should
    * call `_invalidateProperties` or `_flushProperties` to take effect
    *
    * @param {Object} model Prototype or instance
@@ -56,7 +56,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       if (value !== undefined) {
         if (model.__data) {
           // Adding accessor to instance; update the property
-          // It is the user's responsibility to call _flushProperties
+          // It is the userClaim's responsibility to call _flushProperties
           model._setPendingProperty(property, value);
         } else {
           // Adding accessor to proto; save proto's value for instance-time use
@@ -411,7 +411,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
        * and it is up to the subclasser to decide how/when to set those
        * properties back into the accessor.  When calling on an instance,
        * the overwritten value is set via `_setPendingProperty`, and the
-       * user should call `_invalidateProperties` or `_flushProperties`
+       * userClaim should call `_invalidateProperties` or `_flushProperties`
        * for the values to take effect.
        *
        * @param {string} property Name of the property
@@ -551,7 +551,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
        * Calls the `_propertiesChanged` callback with the current set of
        * pending changes (and old values recorded when pending changes were
        * set), and resets the pending set of changes. Generally, this method
-       * should not be called in user code.
+       * should not be called in userClaim code.
        *
        * @return {void}
        * @protected
