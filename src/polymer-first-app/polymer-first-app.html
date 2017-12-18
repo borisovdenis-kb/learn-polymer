@@ -2,6 +2,7 @@
 <link rel="import" href="../../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../../bower_components/paper-slider/paper-slider.html">
 <link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
 <link rel="import" href="../../bower_components/paper-checkbox/paper-checkbox.html">
 <link rel="import" href="../../bower_components/paper-toggle-button/paper-toggle-button.html">
@@ -133,7 +134,7 @@
           </paper-input>
         </div>
 
-        <my-button on-tap="open" is-disabled="{{buttonIsDisabled}}"></my-button>
+        <paper-button on-tap="open" raised disabled="{{buttonIsDisabled}}">Отправить заявку</paper-button>
         <dialog-window id="modal" user-claim="{{userClaim}}" full-name="{{fullName}}">
         </dialog-window>
       </div>
