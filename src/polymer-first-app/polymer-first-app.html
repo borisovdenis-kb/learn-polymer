@@ -104,7 +104,7 @@
         <div id="user-age" class="indent">
           <span>Возраст:</span>
           <div id="slider-wrapper">
-            <paper-slider id="form-slider" pin value="{{userClaim.age}}" max="100" required></paper-slider>
+            <paper-slider id="form-slider" pin value="{{userClaim.age}}" max="100" dir="ltr" editable required></paper-slider>
           </div>
         </div>
 
@@ -226,6 +226,10 @@
       open() {
         console.log(this.userClaim);
         this.$.modal.open()
+      }
+
+      onResponse(response) {
+        console.log(response);
       }
 
     }

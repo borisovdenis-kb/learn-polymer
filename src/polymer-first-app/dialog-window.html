@@ -9,6 +9,16 @@
       }
     </style>
 
+    <iron-ajax
+            url="{{url}}"
+            method="POST"
+            handle-as="json"
+            body="{{userClaim}}"
+            content-type="application/json"
+            on-response="onResponse"
+            id="ajax-el">
+    </iron-ajax>
+
     <paper-dialog id="dialog" with-backdrop>
       <h2>Отправка формы</h2>
       <div id="user-info">
@@ -26,7 +36,7 @@
       </div>
       <div class="buttons">
         <paper-button dialog-dismiss>Cancel</paper-button>
-        <paper-button dialog-confirm autofocus>Accept</paper-button>
+        <paper-button on-tap="makeRequest" dialog-confirm autofocus>Accept</paper-button>
       </div>
     </paper-dialog>
   </template>
@@ -41,12 +51,26 @@
           },
           fullName: {
             type: String
+          },
+          url: {
+            type: String,
+            value: "localhost:8080/api/claims"
           }
         };
       }
 
       open() {
         this.$.dialog.open();
+      }
+
+      makeRequest() {
+        let ironAjaxElement = this.$.ajaxEl;
+        let request = ironAjaxElement.generateRequest();
+        request.completes.then(function(req) {
+          console.log(req);
+        }, function(rejected) {
+          console.log(rejected);
+        });
       }
     }
 
