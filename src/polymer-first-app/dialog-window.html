@@ -1,11 +1,15 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../src/polymer-first-app/paper-button-with-loading.html">
 
 <dom-module id="dialog-window" >
   <template>
     <style>
       paper-dialog {
         width: 400px;
+      }
+      paper-button-with-loading {
+        --paper-button-with-loading-circles-color: #962eff;
       }
     </style>
 
@@ -16,7 +20,7 @@
             body="{{userClaim}}"
             content-type="application/json"
             on-response="onResponse"
-            id="ajax-el">
+            id="ajaxelement">
     </iron-ajax>
 
     <paper-dialog id="dialog" with-backdrop>
@@ -35,8 +39,14 @@
         </ul>
       </div>
       <div class="buttons">
+
         <paper-button dialog-dismiss>Cancel</paper-button>
-        <paper-button on-tap="makeRequest" dialog-confirm autofocus>Accept</paper-button>
+
+        <paper-button-with-loading
+                on-tap="makeRequest"
+                text="Синхронизировать">
+        </paper-button-with-loading>
+
       </div>
     </paper-dialog>
   </template>
@@ -64,13 +74,7 @@
       }
 
       makeRequest() {
-        let ironAjaxElement = this.$.ajaxEl;
-        let request = ironAjaxElement.generateRequest();
-        request.completes.then(function(req) {
-          console.log(req);
-        }, function(rejected) {
-          console.log(rejected);
-        });
+        this.$.ajaxelement.generateRequest();
       }
     }
 
